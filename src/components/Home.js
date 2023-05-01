@@ -1,8 +1,10 @@
 import React from 'react'
-import { useNavigate } from 'react-router'
+import { useLocation, useNavigate } from 'react-router'
 
 const Home = () => {
   const navigate =useNavigate();
+  const location=useLocation();
+  console.log(location)
   return (
     <div>
         <h1>welcome to home page</h1>

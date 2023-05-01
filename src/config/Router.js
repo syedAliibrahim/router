@@ -17,11 +17,15 @@
 
 import { BrowserRouter, Route, Routes, useNavigate } from 'react-router-dom';
 import About from '../components/About';
+import ClassRoom from '../components/ClassRoom';
 import Contact from '../components/Contact';
 import Cuser from '../components/Cuser';
+import Dashboard from '../components/Dashboard';
 // import './App.css';
 import Home from '../components/Home'
 import NavBar from '../components/navBar';
+import Student from '../components/Student';
+import Teacher from '../components/Teacher';
 // 
 // import AppRouter from'../src/config/AppRouter'
 
@@ -40,9 +44,13 @@ function Appr() {
             <Route path='/contact' element={<Contact/>}/>
             <Route path='/cuser/:name' element={<Cuser/>}/>
             {/* <Route path='/*' element={<h1>page not find</h1>}/> */}
+            <Route path='/dashboard/' element={<Dashboard/>}>
+              <Route path='teacher' element={<Teacher/>}/>
+              <Route path='student' element={<Student/>}/>
+              <Route path='classroom' element={<ClassRoom/>}/>
+            </Route>
           </Routes>
-          {/* <button onClick={()=> navigate ('./about')}>About</button> */}
-          {/* <button onClick={()=> NavigateToAbout()}>About</button> */}
+          
        </BrowserRouter>
     </>
   );
